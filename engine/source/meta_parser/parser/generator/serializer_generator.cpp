@@ -29,7 +29,7 @@ namespace Generator
     {
         std::string file_path = processFileName(path);
 
-        Mustache::data muatache_data;
+        Mustache::data mustache_data;
         Mustache::data include_headfiles(Mustache::data::type::list);
         Mustache::data class_defines(Mustache::data::type::list);
 
@@ -81,10 +81,10 @@ namespace Generator
             m_class_defines.push_back(class_def);
         }
 
-        muatache_data.set("class_defines", class_defines);
-        muatache_data.set("include_headfiles", include_headfiles);
+        mustache_data.set("class_defines", class_defines);
+        mustache_data.set("include_headfiles", include_headfiles);
         std::string render_string =
-            TemplateManager::getInstance()->renderByTemplate("commonSerializerGenFile", muatache_data);
+            TemplateManager::getInstance()->renderByTemplate("commonSerializerGenFile", mustache_data);
         Utils::saveFile(render_string, file_path);
 
         m_include_headfiles.push_back(

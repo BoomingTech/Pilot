@@ -91,6 +91,7 @@ namespace Generator
                     std::string    array_useful_name = vector_item.second.first;
                     std::string    item_type         = vector_item.second.second;
                     Mustache::data vector_define;
+                    Utils::replace(array_useful_name, ',', '_');
                     vector_define.set("vector_useful_name", array_useful_name);
                     vector_define.set("vector_type_name", vector_item.first);
                     vector_define.set("vector_element_type_name", item_type);
