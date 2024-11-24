@@ -49,11 +49,11 @@ namespace Piccolo
         }
     }
 
-    bool GObject::hasComponent(const std::string& compenent_type_name) const
+    bool GObject::hasComponent(const std::string& component_type_name) const
     {
         for (const auto& component : m_components)
         {
-            if (component.getTypeName() == compenent_type_name)
+            if (component.getTypeName() == component_type_name)
                 return true;
         }
 
