@@ -21,6 +21,7 @@ option(USE_F16C "Enable F16C" ON)
 option(USE_FMADD "Enable FMADD" ON)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+	add_compile_options(/wd5262 /wd5264)
 	set(CMAKE_CONFIGURATION_TYPES "Debug;Release;Distribution")
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
 	set(CMAKE_CONFIGURATION_TYPES "Debug;Release;ReleaseASAN;ReleaseUBSAN;ReleaseCoverage;Distribution")
