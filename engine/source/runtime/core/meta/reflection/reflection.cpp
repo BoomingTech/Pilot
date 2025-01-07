@@ -1,4 +1,5 @@
 #include "reflection.h"
+#include <algorithm>
 #include <cstring>
 #include <map>
 
